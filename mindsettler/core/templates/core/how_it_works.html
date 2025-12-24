@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>How It Works | MindSettler</title>
+
+    <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="hiw-standalone-body">
+
+    <!-- Top navigation -->
+    <header id="main-header" class="hero-header-wrap">
+      <div class="nav-inner">
+        <div class="logo-wrap">
+          <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
+          <span class="brand">MindSettler</span>
+        </div>
+        <nav class="nav-links">
+          <a href="{% url 'home' %}#hero">Home</a>
+          <a href="{% url 'home' %}#help">We help with</a>
+          <a href="{% url 'how_it_works' %}" class="active-link">How it works</a>
+          <a href="{% url 'home' %}#journey">Your journey</a>
+          <a href="{% url 'home' %}#booking">Book a session</a>
+          <a href="{% url 'what_makes_us_different' %}">What makes us different</a>
+        </nav>
+        <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
+          Book now
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero intro -->
+    <header class="hero-header">
+        <h1>Your Path to a Settled Mind: Simple in Three Steps.</h1>
+        <p>We designed the Mind Settler experience to be clear, respectful, and safe. Your complete journey is structured, ethical, and ready when you are.</p>
+    </header>
+
+    <!-- Three‑step timeline -->
+    <div class="timeline-container">
+
+        <div class="timeline-step">
+            <div class="step-dot">1</div>
+            <div class="step-content">
+                <h2>Reserve Your Time and Space</h2>
+                <p class="subtitle">The 60-Minute Commitment</p>
+                <p>
+                    Your journey begins with a commitment of focused time. Visit the
+                    <strong>Book A Session</strong> section on the homepage to select an available
+                    60-minute time slot, indicating whether you prefer
+                    <strong>Online consultation</strong> or our <strong>Offline Studio</strong>.
+                </p>
+                <ul>
+                    <li>
+                        <strong>The Crucial Start:</strong>
+                        We prioritize the <strong>Introductory Session</strong> — the focused 60 minutes
+                        dedicated to understanding your goals and tailoring the structured guidance ahead.
+                    </li>
+                    <li>
+                        <strong>Submission:</strong>
+                        Once your slot is submitted, its status is automatically set to
+                        <strong>Pending Confirmation</strong>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <div class="step-dot">2</div>
+            <div class="step-content">
+                <h2>Trust, Payment, and Final Confirmation</h2>
+                <p class="subtitle">Securing Your Spot with Manual Confirmation</p>
+                <p>
+                    To maintain simplicity, security, and ethical focus, we use a transparent,
+                    <strong>manual confirmation</strong> process.
+                </p>
+                <ul>
+                    <li>
+                        <strong>Payment Details:</strong>
+                        After submission, you receive clear instructions with our
+                        <strong>UPI ID or cash payment details</strong>.
+                    </li>
+                    <li>
+                        <strong>Securing Your Slot:</strong>
+                        The session is officially confirmed only after we verify the payment.
+                        You receive a <strong>Confirmed</strong> status notification and an option
+                        to <strong>add the session directly to your Google Calendar</strong>.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <div class="step-dot">3</div>
+            <div class="step-content">
+                <h2>The Session, Completion, and Next Steps</h2>
+                <p class="subtitle">Structured Guidance and Progressive Clarity</p>
+                <p>
+                    This step covers the session itself and how we conclude the commitment,
+                    completing the user journey loop.
+                </p>
+                <ul>
+                    <li>
+                        <strong>The Session:</strong>
+                        Attend your scheduled, structured <strong>60-minute session</strong>.
+                        This is a non‑judgmental space dedicated to awareness and self‑understanding.
+                    </li>
+                    <li>
+                        <strong>Session Completion:</strong>
+                        Your professional helps you pause, reflect on the session’s insights,
+                        and identify any practical takeaways.
+                    </li>
+                    <li>
+                        <strong>Ongoing Journey:</strong>
+                        You can then schedule your next session, continuing your path toward
+                        long‑term emotional safety and well‑being.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Extra cards: before / during / after -->
+    <section class="hiw-extra-section">
+        <h2>What you can expect with MindSettler</h2>
+        <p class="hiw-extra-intro">
+            Beyond the three steps, we focus on making the whole experience emotionally safe,
+            predictable, and as light on your nervous system as possible.
+        </p>
+
+        <div class="hiw-extra-grid">
+            <article class="hiw-card">
+                <h3>Before your first session</h3>
+                <ul>
+                    <li>Clear communication of session time, mode, and payment details.</li>
+                    <li>Simple language instead of heavy clinical forms wherever possible.</li>
+                    <li>Space to share any access needs or preferences in advance.</li>
+                </ul>
+            </article>
+
+            <article class="hiw-card">
+                <h3>During the session</h3>
+                <ul>
+                    <li>A calm, non‑judgmental room — online or in‑person.</li>
+                    <li>Gentle questions, pauses, and check‑ins about your comfort.</li>
+                    <li>Focus on awareness and tiny next steps, not instant “fixes”.</li>
+                </ul>
+            </article>
+
+            <article class="hiw-card">
+                <h3>After the session</h3>
+                <ul>
+                    <li>Time to summarise key moments or insights you want to remember.</li>
+                    <li>Option to schedule your next session when you are ready.</li>
+                    <li>Encouragement to move at a pace that feels sustainable for you.</li>
+                </ul>
+            </article>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <h2>Ready to Complete Your First Journey?</h2>
+        <p>Your clear, human-centric path is ready when you are.</p>
+        <div class="cta-buttons">
+            <a href="{% url 'home' %}#booking" class="cta-primary">Book Your Introductory Session Now</a>
+            <a href="{% url 'home' %}#faqs" class="cta-secondary">Visit our FAQs →</a>
+        </div>
+    </section>
+
+    <!-- Chatbot (same as other pages) -->
+    <div id="chatbot-panel">
+      <button id="chat-toggle">Need guidance?</button>
+      <div class="chat-window">
+        <div class="chat-header">
+          <span>MindSettler Guide</span>
+          <button id="chat-close">&times;</button>
+        </div>
+        <div id="chat-log" class="chat-log">
+          <div class="msg bot">
+            Ask me about how MindSettler works, sessions, or booking — I can also send you to this How It Works page.
+          </div>
+        </div>
+        <form id="chat-form" class="chat-form">
+          {% csrf_token %}
+          <input id="chat-input" type="text" placeholder="Ask about how it works, sessions, or booking…" autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+        <p class="chat-disclaimer">
+          Not for emergencies. For urgent help, please contact local emergency services.
+        </p>
+      </div>
+    </div>
+
+    <script src="{% static 'core/main.js' %}"></script>
+</body>
+</html>

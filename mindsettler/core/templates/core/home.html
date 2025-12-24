@@ -1,0 +1,330 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MindSettler | Gentle Therapy & Psycho‑Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+</head>
+<body>
+  <!-- Sticky navigation -->
+  <header id="main-header">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
+        <span class="brand">MindSettler</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#help">We help with</a>
+        <a href="{% url 'how_it_works' %}">How it works</a>
+        <a href="#journey">Your journey</a>
+        <a href="#booking">Book a session</a>
+        <a href="{% url 'what_makes_us_different' %}">What makes us different</a>
+      </nav>
+      <button id="book-now-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
+        Book now
+      </button>
+      <button id="menu-progress">
+        <svg viewBox="0 0 36 36" class="progress-ring">
+          <path
+            class="progress-ring__circle"
+            stroke-width="3"
+            fill="transparent"
+            stroke-linecap="round"
+            d="M18 2
+               a 16 16 0 0 1 0 32
+               a 16 16 0 0 1 0 -32" />
+        </svg>
+        <span class="menu-dots"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="section hero-section">
+    <div class="hero-bg parallax-layer">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="{% static 'core/video/hero0.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow reveal">A calm space for your mind</p>
+      <h1 class="hero-title reveal">
+        Start your<br>healing journey.
+      </h1>
+      <p class="hero-text reveal">
+        Structured, gentle therapy and psycho‑education to help you understand your inner world,
+        one safe conversation at a time.
+      </p>
+      <div class="hero-cta reveal">
+        <a class="btn primary" href="#booking">Book your first session</a>
+        <a class="btn ghost" href="{% url 'how_it_works' %}">See how it works</a>
+      </div>
+      <div class="hero-cta reveal">
+        <a class="btn ghost" href="#journey">What to expect</a>
+      </div>
+      <div class="hero-note reveal">
+        <span class="pill">Online &amp; offline · 60‑minute sessions</span>
+      </div>
+      <div class="hero-thumbnails reveal">
+        <div class="media-hover">
+          <img src="{% static 'core/img/healing.jpeg' %}" alt="Healing illustration">
+        </div>
+        <div class="media-hover">
+          <img src="{% static 'core/img/abstract.jpeg' %}" alt="Abstract calm shapes">
+        </div>
+        <div class="media-hover">
+          <img src="{% static 'core/img/Mindsettler-1.jpg' %}" alt="MindSettler quote">
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-side-card reveal">
+      <div class="media-hover">
+        <img src="{% static 'core/img/hero.jpeg' %}" alt="Therapy room" class="hero-photo">
+      </div>
+      <p class="side-label">We help you with</p>
+      <ul>
+        <li>Unhelpful patterns &amp; coping habits</li>
+        <li>Confidence and self‑esteem</li>
+        <li>Healing from trauma</li>
+        <li>Relationships &amp; attachment</li>
+        <li>Parenting &amp; family challenges</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HELP -->
+  <section id="help" class="section help-section">
+    <div class="section-intro reveal">
+      <p class="eyebrow">How MindSettler supports you</p>
+      <h2 class="section-title">We help you with</h2>
+      <p class="section-text">
+        Compassionate therapy and psycho‑education sessions designed to gently untangle
+        what feels heavy, while keeping the space warm and human.
+      </p>
+    </div>
+
+    <div class="media-hover wide-poster reveal">
+      <img src="{% static 'core/img/poster.jpeg' %}" alt="We help you with poster">
+    </div>
+
+    <div class="cards-grid">
+      <article class="card reveal">
+        <h3>Overcoming patterns</h3>
+        <p>Notice, understand, and slowly change repetitive thoughts, emotions, and coping styles that are not serving you.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Confidence &amp; self‑esteem</h3>
+        <p>Build a softer inner voice, clearer boundaries, and a more grounded sense of who you are.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Trauma healing</h3>
+        <p>Work with past experiences at a pace that feels safe, without rushing your story or your feelings.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Relationships</h3>
+        <p>Explore attachment, intimacy, and communication so your relationships can feel less confusing and more supportive.</p>
+      </article>
+      <article class="card reveal">
+        <h3>Family &amp; parenting</h3>
+        <p>Make sense of family patterns, generational stories, and parenting challenges with gentle guidance.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section id="journey" class="section journey-section">
+    <div class="journey-inner parallax-layer">
+      <div class="journey-left">
+        <p class="eyebrow reveal">Your first session</p>
+        <h2 class="section-title reveal">A gentle, human beginning.</h2>
+        <p class="section-text reveal">
+          Therapy sessions at MindSettler are structured but never rushed. It’s okay if you
+          feel awkward, quiet, or have too much to say — there is room for all of it.
+        </p>
+        <ul class="journey-points">
+          <li class="reveal">
+            <span class="icon-circle">☺</span>
+            Wanting the session to go by quickly.
+          </li>
+          <li class="reveal">
+            <span class="icon-circle">❀</span>
+            An awkward first start — we are both humans, after all.
+          </li>
+          <li class="reveal">
+            <span class="icon-circle">♡</span>
+            Not being sure what to talk about at first.
+          </li>
+          <li class="reveal">
+            <span class="icon-circle">♛</span>
+            Having so much to say you don’t know where to begin.
+          </li>
+          <li class="reveal">
+            <span class="icon-circle">🎈</span>
+            Slowly feeling like this is the most comfortable space you know.
+          </li>
+        </ul>
+      </div>
+
+      <div class="journey-right reveal">
+        <div class="journey-card">
+          <p class="eyebrow">A good therapy session also includes…</p>
+          <ul>
+            <li>Moments of silence to breathe and notice.</li>
+            <li>Gentle questions instead of quick fixes.</li>
+            <li>Checking in about your comfort and pace.</li>
+            <li>A clear plan for the next small step.</li>
+          </ul>
+          <div class="journey-collage">
+            <div class="media-hover">
+              <img src="{% static 'core/img/WhatsApp-1.jpeg' %}" alt="MindSettler slide 1">
+            </div>
+            <div class="media-hover">
+              <img src="{% static 'core/img/WhatsApp-2.jpeg' %}" alt="MindSettler slide 2">
+            </div>
+          </div>
+          <p class="small-note">
+            This page is for information and support, not crisis care.  
+            If you are in immediate danger, please contact local emergency services.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section gallery-strip">
+    <div class="gallery-bg parallax-layer"></div>
+    <div class="gallery-row reveal">
+      <div class="media-hover">
+        <img src="{% static 'core/img/Mindsettler-2.jpg' %}" alt="Gentle quote 1">
+      </div>
+      <div class="media-hover">
+        <img src="{% static 'core/img/Mindsettler-1.jpg' %}" alt="Gentle quote 2">
+      </div>
+      <div class="media-hover">
+        <img src="{% static 'core/img/abstract.jpeg' %}" alt="Abstract calm art">
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking" class="section booking-section">
+    <div class="section-intro reveal">
+      <p class="eyebrow">Book your session</p>
+      <h2 class="section-title">Ready when you are.</h2>
+      <p class="section-text">
+        Sessions are 60 minutes, online or in‑person, with the first session focused on
+        understanding your story and what you need right now.
+      </p>
+    </div>
+
+    <div class="booking-grid">
+      <div class="booking-card reveal">
+        <h3>Call or WhatsApp</h3>
+        <p class="big-number">+91 99746 31313</p>
+        <div class="media-hover">
+          <video class="booking-video" autoplay muted loop playsinline>
+            <source src="{% static 'core/video/hero1.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+        <p>Text or call to choose a time that works for you. You’ll receive a gentle confirmation message.</p>
+      </div>
+
+      <div class="booking-card reveal">
+        <h3>Instagram DM</h3>
+        <p>@mindsettlerbypb</p>
+        <div class="media-hover">
+          <video class="booking-video" autoplay muted loop playsinline>
+            <source src="{% static 'core/video/hero2.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+        <p>Send a short note about what you’re looking for. A human will respond with available slots.</p>
+      </div>
+
+      <div class="booking-card reveal">
+        <h3>Session details</h3>
+        <div class="media-hover">
+          <video class="booking-video" autoplay muted loop playsinline>
+            <source src="{% static 'core/video/hero3.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+        <ul>
+          <li>Online / offline consultation sessions</li>
+          <li>60 minutes per session</li>
+          <li>Backend‑controlled time slots</li>
+          <li>Pending &amp; confirmed appointment updates</li>
+        </ul>
+      </div>
+
+      <div class="booking-card reveal">
+        <h3>What it feels like</h3>
+        <div class="media-hover">
+          <video class="booking-video" autoplay muted loop playsinline>
+            <source src="{% static 'core/video/hero4.mp4' %}" type="video/mp4">
+          </video>
+        </div>
+        <p>Soft visuals from the therapy space to help you imagine the room before you walk in.</p>
+      </div>
+    </div>
+
+    <div class="booking-footer reveal">
+      <p>Before your first session, please read our Privacy, Non‑Refund, and Confidentiality policies.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">MindSettler</p>
+        <p>Structured, human therapy and psycho‑education for your everyday life.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <p>Phone / WhatsApp: +91 99746 31313</p>
+        <p>Instagram: @mindsettlerbypb</p>
+      </div>
+      <div>
+        <p class="footer-heading">Legal</p>
+        <a href="#">Privacy Policy</a><br>
+        <a href="#">Non‑Refund Policy</a><br>
+        <a href="#">Confidentiality Policy</a>
+      </div>
+    </div>
+    <p class="footer-bottom">This website is for education and information only and is not a substitute for medical or psychiatric care.</p>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div id="chatbot-panel">
+    <button id="chat-toggle">Need guidance?</button>
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>MindSettler Guide</span>
+        <button id="chat-close">&times;</button>
+      </div>
+      <div id="chat-log" class="chat-log">
+        <div class="msg bot">
+          Hi, I’m here to gently guide you through MindSettler sessions and booking.  
+          I can’t offer crisis or medical advice, but I can help you understand how we work.
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        {% csrf_token %}
+        <input id="chat-input" type="text" placeholder="Ask about sessions or booking…" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+      <p class="chat-disclaimer">
+        Not for emergencies. For urgent help, please contact local emergency services.
+      </p>
+    </div>
+  </div>
+
+  <script src="{% static 'core/main.js' %}"></script>
+</body>
+</html>
