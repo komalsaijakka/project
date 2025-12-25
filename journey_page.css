@@ -1,0 +1,302 @@
+/* Light Pink Theme */
+:root {
+    --primary-pink: #FFD1DC;    /* Soft light pink */
+    --accent-pink: #FFB6C1;     /* Slightly deeper pink */
+    --deep-pink: #FF69B4;       /* Hot pink for accents */
+    --text-dark: #4A4A4A;
+    --text-light: #FFFFFF;
+    --shadow-normal: 0 10px 30px rgba(255, 105, 180, 0.15);
+    --shadow-hover: 0 20px 50px rgba(255, 105, 180, 0.3);
+    --transition: all 0.4s ease;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #FFF0F5, #FFFFFF);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Journey Section */
+#journey-section {
+    padding: 100px 20px;
+    text-align: center;
+    background: url('https://images.stockcake.com/public/c/c/d/ccdb8268-386c-477c-a45d-499ddb91c54e_large/inner-peace-journey-stockcake.jpg') no-repeat center center/cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+#journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255, 209, 220, 0.75);
+    z-index: 1;
+}
+
+.journey-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.journey-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--deep-pink);
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition);
+}
+
+.journey-intro {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition) 0.6s;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding: 50px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, var(--accent-pink), var(--deep-pink));
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.6);
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    transform: translateX(100px);
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    transform: translateX(-100px);
+}
+
+.timeline-card {
+    background: var(--text-light);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-normal);
+    text-align: left;
+    position: relative;
+    transition: var(--transition);
+}
+
+.timeline-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover); /* Enhanced light pink glow on hover */
+}
+
+.timeline-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--deep-pink);
+    top: 30px;
+    box-shadow: var(--shadow-normal);
+    transition: var(--transition);
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: -90px;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: -90px;
+}
+
+.timeline-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--deep-pink);
+    margin: 0 0 15px 70px;
+}
+
+.timeline-card p {
+    margin-left: 70px;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+/* CTA */
+.journey-cta {
+    margin-top: 80px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: var(--transition) 0.8s;
+}
+
+.cta-button {
+    background: var(--deep-pink);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--shadow-normal);
+    transition: var(--transition);
+}
+
+.cta-button:hover {
+    background: #ff1493;
+    transform: scale(1.05);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Animation class */
+.animate {
+    opacity: 1 !important;
+    transform: translateX(0) translateY(0) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 20px;
+        left: 0 !important;
+        transform: translateX(-50px);
+    }
+
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        transform: translateX(-50px);
+    }
+
+    .timeline-item:nth-child(even) .timeline-icon,
+    .timeline-item:nth-child(odd) .timeline-icon {
+        left: -30px;
+    }
+
+    .timeline-card h3,
+    .timeline-card p {
+        margin-left: 0;
+    }
+
+    .journey-title {
+        font-size: 2.5rem;
+    }
+}
+/* Footer Styles */
+.site-footer {
+    background: #FF69B4; /* Dark pink / Hot pink */
+    color: white;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    text-align: center;
+}
+
+.footer-contact p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.footer-contact a {
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact i {
+    margin-right: 10px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-policies h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.footer-policies ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-policies li {
+    margin: 8px 0;
+}
+
+.footer-policies a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.footer-policies a:hover {
+    text-decoration: underline;
+}
+
+.highlight {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .footer-contact p,
+    .footer-policies h4 {
+        font-size: 1rem;
+    }
+}
