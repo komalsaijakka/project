@@ -16,14 +16,16 @@
         <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
         <span class="brand">MindSettler</span>
       </div>
-        <nav class="nav-links">
+      <nav class="nav-links">
         <a href="{% url 'home' %}#hero">Home</a>
         <a href="{% url 'home' %}#help">We help with</a>
         <a href="{% url 'how_it_works' %}">How it works</a>
-        <a href="{% url 'home' %}#journey">Your journey</a>
-        <a href="{% url 'what_makes_us_different' %}" class="active-link">What makes us different</a>
+        <a href="{% url 'your_journey' %}" class="{% if request.resolver_match.url_name == 'your_journey' %}active-link{% endif %}">
+          Your journey
+        </a>
+        <a href="{% url 'what_makes_us_different' %}">What makes us different</a>
         <a href="{% url 'home' %}#booking">Book a session</a>
-        </nav>
+      </nav>
       <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
         Book now
       </a>

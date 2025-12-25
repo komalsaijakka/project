@@ -17,12 +17,14 @@
         <span class="brand">MindSettler</span>
       </div>
       <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#help">We help with</a>
+        <a href="{% url 'home' %}#hero">Home</a>
+        <a href="{% url 'home' %}#help">We help with</a>
         <a href="{% url 'how_it_works' %}">How it works</a>
-        <a href="#journey">Your journey</a>
-        <a href="#booking">Book a session</a>
+        <a href="{% url 'your_journey' %}" class="{% if request.resolver_match.url_name == 'your_journey' %}active-link{% endif %}">
+          Your journey
+        </a>
         <a href="{% url 'what_makes_us_different' %}">What makes us different</a>
+        <a href="{% url 'home' %}#booking">Book a session</a>
       </nav>
       <button id="book-now-btn" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
         Book now

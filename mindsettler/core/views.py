@@ -17,6 +17,9 @@ def how_it_works(request: HttpRequest):
 def what_makes_us_different(request: HttpRequest):
     return render(request, "core/what_makes_us_different.html")
 
+def your_journey(request: HttpRequest):
+    return render(request, "core/your_journey.html")
+
 
 def chatbot_reply(request: HttpRequest):
   if request.method != "POST":

@@ -164,3 +164,26 @@
     return cookieValue;
   }
 })();
+
+// Journey page scroll animations
+document.addEventListener("DOMContentLoaded", () => {
+  const journeyElements = document.querySelectorAll(
+    ".journey-title, .journey-intro, .timeline-item, .journey-cta"
+  );
+
+  if (!journeyElements.length) return;
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  journeyElements.forEach(el => observer.observe(el));
+});
+
