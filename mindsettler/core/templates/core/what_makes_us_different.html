@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>What Makes Us Different | MindSettler</title>
+  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="wmud-body">
+
+  <!-- Header -->
+  <header id="main-header" class="hero-header-wrap">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
+        <span class="brand">MindSettler</span>
+      </div>
+        <nav class="nav-links">
+        <a href="{% url 'home' %}#hero">Home</a>
+        <a href="{% url 'home' %}#help">We help with</a>
+        <a href="{% url 'how_it_works' %}">How it works</a>
+        <a href="{% url 'home' %}#journey">Your journey</a>
+        <a href="{% url 'what_makes_us_different' %}" class="active-link">What makes us different</a>
+        <a href="{% url 'home' %}#booking">Book a session</a>
+        </nav>
+      <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
+        Book now
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO: bold split with video + badges -->
+  <section class="section wmud-hero">
+    <div class="wmud-hero-left fade-up">
+      <p class="eyebrow">Why MindSettler stands out</p>
+      <h1 class="section-title">Therapy that feels human,<br>structured, and deeply ethical.</h1>
+      <p class="section-text">
+        Many therapy spaces promise support. MindSettler is built to give you clear structure,
+        gentle honesty, and an experience that respects both your story and your nervous system.
+      </p>
+      <div class="wmud-badges">
+        <span class="wmud-pill">Evidence‑informed + trauma‑aware</span>
+        <span class="wmud-pill">Manual confirmation · no hidden hooks</span>
+        <span class="wmud-pill">High‑touch, low‑overwhelm onboarding</span>
+      </div>
+      <div class="wmud-hero-actions">
+        <a class="btn primary" href="{% url 'home' %}#booking">Book a session</a>
+        <a class="btn ghost" href="{% url 'how_it_works' %}">See the full journey</a>
+      </div>
+    </div>
+
+    <div class="wmud-hero-right fade-in">
+      <div class="media-hover wmud-hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="{% static 'core/video/hero.mp4' %}" type="video/mp4">
+        </video>
+      </div>
+      <p class="wmud-hero-caption">
+        Real visuals from the MindSettler space — soft light, grounded colours, and room for your whole self.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION: 3 feature cards with icons/images -->
+  <section class="section wmud-grid">
+    <h2 class="section-title center">What makes us different in practice</h2>
+    <p class="section-text center">
+      Not just warm words. These are concrete ways your experience here will feel different from
+      a generic “book and forget” therapy platform.
+    </p>
+
+    <div class="wmud-feature-grid">
+      <article class="wmud-card fade-up">
+        <div class="wmud-card-media media-hover">
+          <img src="{% static 'core/img/Mindsettler-3.jpg' %}" alt="Gentle psycho‑education">
+        </div>
+        <h3>Gentle, structured psycho‑education</h3>
+        <p>
+          Sessions blend emotional support with clear explanations of patterns, attachment, and coping —
+          so you understand not just what you feel, but why.
+        </p>
+        <ul>
+          <li>Language that is simple, not clinical‑heavy.</li>
+          <li>Visual explainers and metaphors where helpful.</li>
+          <li>Room to ask “can you say that again differently?”</li>
+        </ul>
+      </article>
+
+      <article class="wmud-card fade-up">
+        <div class="wmud-card-media media-hover">
+          <img src="{% static 'core/img/hero.jpeg' %}" alt="Safe therapy room">
+        </div>
+        <h3>Environment designed for emotional safety</h3>
+        <p>
+          From lighting and seating to how we pace questions, the space is designed to keep your
+          body as regulated as possible while we talk.
+        </p>
+        <ul>
+          <li>Unhurried starts and ends to each 60‑minute session.</li>
+          <li>Check‑ins on comfort, triggers, and boundaries.</li>
+          <li>No pressure to share everything in one go.</li>
+        </ul>
+      </article>
+
+      <article class="wmud-card fade-up">
+        <div class="wmud-card-media media-hover">
+          <img src="{% static 'core/img/abstract.jpeg' %}" alt="Ethical and clear process">
+        </div>
+        <h3>Transparent, ethical process</h3>
+        <p>
+          No surprise charges, no algorithmic double‑booking. Every step — from payment to
+          confirmation — is manual, deliberate, and clearly communicated.
+        </p>
+        <ul>
+          <li>Session confirmed only after payment is acknowledged.</li>
+          <li>Clear non‑refund, confidentiality, and privacy policies.</li>
+          <li>Real humans responding to calls, WhatsApps, and DMs.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- SECTION: side‑by‑side testimonial style strip -->
+  <section class="section wmud-proof">
+    <div class="wmud-proof-inner">
+      <div class="wmud-proof-left fade-up">
+        <h2>Designed for people who overthink therapy.</h2>
+        <p>
+          Many clients arrive saying they almost backed out of booking.
+          MindSettler is intentionally built for the anxious, skeptical, “is therapy really for me?” mind.
+        </p>
+        <ul>
+          <li>Clear previews of what a session looks and feels like.</li>
+          <li>Language that honours doubt instead of pushing past it.</li>
+          <li>Space to name fears about therapy itself in session.</li>
+        </ul>
+      </div>
+      <div class="wmud-proof-right fade-in">
+        <div class="media-hover">
+          <img src="{% static 'core/img/WhatsApp-2.jpeg' %}" alt="MindSettler reassurance slide">
+        </div>
+        <div class="media-hover">
+          <img src="{% static 'core/img/WhatsApp-1.jpeg' %}" alt="MindSettler supportive slide">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: highlight strip with numbers -->
+  <section class="section wmud-numbers">
+    <div class="wmud-numbers-inner fade-up">
+      <div class="wmud-number">
+        <span class="wmud-number-value">60</span>
+        <span class="wmud-number-label">minutes fully yours<br>each session</span>
+      </div>
+      <div class="wmud-number">
+        <span class="wmud-number-value">1</span>
+        <span class="wmud-number-label">human guide<br>not a rotating panel</span>
+      </div>
+      <div class="wmud-number">
+        <span class="wmud-number-value">0</span>
+        <span class="wmud-number-label">pressure to be “okay”<br>before you arrive</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section wmud-cta">
+    <div class="wmud-cta-inner fade-up">
+      <h2 class="section-title">If this feels like the space you have been looking for…</h2>
+      <p class="section-text">
+        Your next step is simple: choose a time, say a little about what is going on, and
+        let the first conversation do the rest. You do not have to be “ready” — just willing
+        to show up as you are.
+      </p>
+      <div class="wmud-cta-actions">
+        <a class="btn primary" href="{% url 'home' %}#booking">Book a session</a>
+        <a class="btn ghost" href="{% url 'how_it_works' %}">See how the process works</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot -->
+  <div id="chatbot-panel">
+    <button id="chat-toggle">Need guidance?</button>
+    <div class="chat-window">
+      <div class="chat-header">
+        <span>MindSettler Guide</span>
+        <button id="chat-close">&times;</button>
+      </div>
+      <div id="chat-log" class="chat-log">
+        <div class="msg bot">
+          You can ask what makes MindSettler different, or get help choosing between online and studio sessions.
+        </div>
+      </div>
+      <form id="chat-form" class="chat-form">
+        {% csrf_token %}
+        <input id="chat-input" type="text" placeholder="Ask what makes us different, or how to start…" autocomplete="off" />
+        <button type="submit">Send</button>
+      </form>
+      <p class="chat-disclaimer">
+        Not for emergencies. For urgent help, please contact local emergency services.
+      </p>
+    </div>
+  </div>
+
+  <script src="{% static 'core/main.js' %}"></script>
+</body>
+</html>
