@@ -20,6 +20,14 @@ def what_makes_us_different(request: HttpRequest):
 def your_journey(request: HttpRequest):
     return render(request, "core/your_journey.html")
 
+def about(request: HttpRequest):
+    return render(request, "core/aboutus.html")
+
+def psycho_education(request: HttpRequest):
+    return render(request, "core/pea.html")
+
+def signin(request: HttpRequest):
+    return render(request, "core/signin.html")
 
 def chatbot_reply(request: HttpRequest):
   if request.method != "POST":

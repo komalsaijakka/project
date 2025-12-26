@@ -11,27 +11,29 @@
 <body class="hiw-standalone-body">
 
     <!-- Top navigation -->
-    <header id="main-header" class="hero-header-wrap">
-      <div class="nav-inner">
-        <div class="logo-wrap">
-          <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
-          <span class="brand">MindSettler</span>
-        </div>
-        <nav class="nav-links">
-        <a href="{% url 'home' %}#hero">Home</a>
-        <a href="{% url 'home' %}#help">We help with</a>
-        <a href="{% url 'how_it_works' %}">How it works</a>
-        <a href="{% url 'your_journey' %}" class="{% if request.resolver_match.url_name == 'your_journey' %}active-link{% endif %}">
-            Your journey
-        </a>
-        <a href="{% url 'what_makes_us_different' %}">What makes us different</a>
-        <a href="{% url 'home' %}#booking">Book a session</a>
-        </nav>
-        <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
-          Book now
-        </a>
-      </div>
-    </header>
+<header id="main-header" class="hero-header-wrap">
+  <div class="nav-inner">
+    <div class="logo-wrap">
+      <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
+      <span class="brand">MindSettler</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="{% url 'home' %}#hero">Home</a>
+      <a href="{% url 'how_it_works' %}">Flow</a>             <!-- How it works -->
+      <a href="{% url 'your_journey' %}">Path</a>              <!-- Your journey -->
+      <a href="{% url 'what_makes_us_different' %}">Why us</a>
+      <a href="{% url 'about' %}">Team</a>
+      <a href="{% url 'psycho_education' %}">Learn</a>
+      <a href="{% url 'signin' %}">Login</a>
+    </nav>
+
+    <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
+      Book
+    </a>
+  </div>
+</header>
+
 
     <!-- Hero intro -->
     <header class="hero-header">
