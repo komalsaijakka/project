@@ -137,7 +137,7 @@
   function appendMessage(role, text) {
     const div = document.createElement("div");
     div.className = `msg ${role}`;
-    div.textContent = text;
+    div.innerHTML = text; // Allow HTML for links
     log.appendChild(div);
     log.scrollTop = log.scrollHeight;
   }
@@ -145,7 +145,7 @@
   function replaceLastBotMessage(text) {
     const messages = log.querySelectorAll(".msg.bot");
     const last = messages[messages.length - 1];
-    if (last) last.textContent = text;
+    if (last) last.innerHTML = text;
     log.scrollTop = log.scrollHeight;
   }
 

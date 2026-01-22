@@ -1,182 +1,125 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Psycho‑Education | MindSettler</title>
-  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
-</head>
-<body class="psycho">
-<header id="main-header" class="hero-header-wrap">
-  <div class="nav-inner">
-    <div class="logo-wrap">
-      <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
-      <span class="brand">MindSettler</span>
-    </div>
 
-    <nav class="nav-links">
-      <a href="{% url 'home' %}#hero">Home</a>
-      <a href="{% url 'how_it_works' %}">Flow</a>             <!-- How it works -->
-      <a href="{% url 'your_journey' %}">Path</a>              <!-- Your journey -->
-      <a href="{% url 'what_makes_us_different' %}">Why us</a>
-      <a href="{% url 'about' %}">Team</a>
-      <a href="{% url 'psycho_education' %}">Learn</a>
-      <a href="{% url 'signin' %}">Login</a>
-    </nav>
+{% block title %}Psycho‑Education{% endblock %}
 
-    <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
-      Book
-    </a>
-  </div>
-</header>
+{% block body_class %}psycho{% endblock %}
 
+{% block content %}
+<section class="reveal-on-scroll" style="margin-top: 2rem;">
+  <h1>What is psycho‑education?</h1>
+  <p>
+    Psycho‑education helps you understand your mind, emotions, and behaviours in a calm,
+    simple, and non‑judgmental way. It is about awareness and language, not labels.
+  </p>
+  <p>
+    This page is designed to create clarity, reduce confusion, and gently normalise what
+    you might be feeling — so you realise you are not alone or “broken”.
+  </p>
+</section>
 
-  <main>
-    <section class="reveal-on-scroll">
-      <h1>What is psycho‑education?</h1>
-      <p>
-        Psycho‑education helps you understand your mind, emotions, and behaviours in a calm,
-        simple, and non‑judgmental way. It is about awareness and language, not labels.
-      </p>
-      <p>
-        This page is designed to create clarity, reduce confusion, and gently normalise what
-        you might be feeling — so you realise you are not alone or “broken”.
-      </p>
-    </section>
+<section class="reveal-on-scroll">
+  <h2>Mental health and mental well‑being</h2>
+  <p>
+    Mental health is how we think, feel, and behave in everyday life. It shapes how we
+    handle stress, relate to others, make decisions, and respond to challenges.
+  </p>
+  <p>
+    Mental well‑being does not mean being happy all the time. It means being able to feel,
+    adapt, and respond to life in a way that feels more balanced and less chaotic.
+  </p>
+</section>
 
-    <section class="reveal-on-scroll">
-      <h2>Mental health and mental well‑being</h2>
-      <p>
-        Mental health is how we think, feel, and behave in everyday life. It shapes how we
-        handle stress, relate to others, make decisions, and respond to challenges.
-      </p>
-      <p>
-        Mental well‑being does not mean being happy all the time. It means being able to feel,
-        adapt, and respond to life in a way that feels more balanced and less chaotic.
-      </p>
-    </section>
+<section class="reveal-on-scroll">
+  <h2>How thoughts, emotions, and behaviours connect</h2>
+  <p>
+    Our thoughts, emotions, and behaviours constantly influence each other. A shift in one
+    often changes the others.
+  </p>
+  <ul>
+    <li>Thoughts influence how we feel about ourselves and the world.</li>
+    <li>Emotions influence what we do or avoid.</li>
+    <li>Actions create new experiences, shaping future thoughts.</li>
+  </ul>
+  <p>
+    Understanding this loop helps us notice patterns instead of blaming ourselves.
+  </p>
+</section>
 
-    <section class="reveal-on-scroll">
-      <h2>How thoughts, emotions, and behaviours connect</h2>
-      <p>
-        Our thoughts, emotions, and behaviours constantly influence each other. A shift in one
-        often changes the others.
-      </p>
-      <ul>
-        <li>Thoughts influence how we feel about ourselves and the world.</li>
-        <li>Emotions influence what we do or avoid.</li>
-        <li>Actions create new experiences, shaping future thoughts.</li>
-      </ul>
-      <p>
-        Understanding this loop helps us notice patterns instead of blaming ourselves.
-      </p>
-    </section>
+<section class="reveal-on-scroll">
+  <h2>Stress, anxiety, and your nervous system</h2>
+  <p>
+    Stress is usually a response to pressure or challenge and often reduces when the
+    situation changes. Anxiety can stay even when you are technically “safe”.
+  </p>
+  <p>
+    Both are common human experiences. Learning how they show up in your body —
+    racing heart, tight jaw, numbness, overthinking — is a first step toward feeling
+    more in charge of them.
+  </p>
+</section>
 
-    <section class="reveal-on-scroll">
-      <h2>Stress, anxiety, and your nervous system</h2>
-      <p>
-        Stress is usually a response to pressure or challenge and often reduces when the
-        situation changes. Anxiety can stay even when you are technically “safe”.
-      </p>
-      <p>
-        Both are common human experiences. Learning how they show up in your body —
-        racing heart, tight jaw, numbness, overthinking — is a first step toward feeling
-        more in charge of them.
-      </p>
-    </section>
+<section class="reveal-on-scroll">
+  <h2>Emotions as signals, not enemies</h2>
+  <p>
+    Emotions are not problems to delete; they are signals carrying information.
+  </p>
+  <ul>
+    <li>Sadness may signal a need for rest, comfort, or connection.</li>
+    <li>Anger may signal that a boundary or value has been crossed.</li>
+    <li>Fear may signal that something feels unsafe or uncertain.</li>
+  </ul>
+  <p>
+    When we understand what an emotion is trying to tell us, we can respond with care
+    instead of reacting in ways we regret.
+  </p>
+</section>
 
-    <section class="reveal-on-scroll">
-      <h2>Emotions as signals, not enemies</h2>
-      <p>
-        Emotions are not problems to delete; they are signals carrying information.
-      </p>
-      <ul>
-        <li>Sadness may signal a need for rest, comfort, or connection.</li>
-        <li>Anger may signal that a boundary or value has been crossed.</li>
-        <li>Fear may signal that something feels unsafe or uncertain.</li>
-      </ul>
-      <p>
-        When we understand what an emotion is trying to tell us, we can respond with care
-        instead of reacting in ways we regret.
-      </p>
-    </section>
+<section class="reveal-on-scroll">
+  <h2>Myths about “being strong”</h2>
+  <p>
+    A common myth is that strong people do not struggle. In reality, strength includes
+    being honest about pain, confusion, and limits.
+  </p>
+  <p>
+    Another myth is that mental health concerns are rare. Emotional difficulty is part
+    of being human, especially in demanding, fast‑moving lives.
+  </p>
+</section>
 
-    <section class="reveal-on-scroll">
-      <h2>Myths about “being strong”</h2>
-      <p>
-        A common myth is that strong people do not struggle. In reality, strength includes
-        being honest about pain, confusion, and limits.
-      </p>
-      <p>
-        Another myth is that mental health concerns are rare. Emotional difficulty is part
-        of being human, especially in demanding, fast‑moving lives.
-      </p>
-    </section>
+<section class="reveal-on-scroll">
+  <h2>When support can help</h2>
+  <p>
+    Support can be helpful when emotions feel overwhelming, stress affects sleep or
+    daily functioning, or confusion about what you feel keeps returning.
+  </p>
+  <p>
+    You do not have to wait for a breaking point. Early awareness and gentle guidance
+    can prevent deeper distress.
+  </p>
+  <p>
+    You might start by asking yourself:
+  </p>
+  <ul>
+    <li>What emotions do I experience most often right now?</li>
+    <li>What situations increase my stress or discomfort?</li>
+    <li>How do I usually respond when I feel triggered or hurt?</li>
+  </ul>
+</section>
 
-    <section class="reveal-on-scroll">
-      <h2>When support can help</h2>
-      <p>
-        Support can be helpful when emotions feel overwhelming, stress affects sleep or
-        daily functioning, or confusion about what you feel keeps returning.
-      </p>
-      <p>
-        You do not have to wait for a breaking point. Early awareness and gentle guidance
-        can prevent deeper distress.
-      </p>
-      <p>
-        You might start by asking yourself:
-      </p>
-      <ul>
-        <li>What emotions do I experience most often right now?</li>
-        <li>What situations increase my stress or discomfort?</li>
-        <li>How do I usually respond when I feel triggered or hurt?</li>
-      </ul>
-    </section>
-
-    <section class="reveal-on-scroll">
-      <h2>Psycho‑education inside MindSettler sessions</h2>
-      <p>
-        In sessions, psycho‑education looks like small explanations, metaphors, and visuals
-        that make your patterns easier to understand.
-      </p>
-      <p>
-        You are always free to say, “Can you explain that again in a simpler way?” —
-        your understanding matters more than using perfect terms.
-      </p>
-      <p>
-        Mental well‑being is a journey, not a destination. Understanding your mind is one
-        powerful step; acting from that understanding, slowly and kindly, is the next.
-      </p>
-    </section>
-  </main>
-
-  <!-- Chatbot (shared) -->
-<div id="chatbot-panel">
-  <button id="chat-toggle">Need guidance?</button>
-  <div class="chat-window">
-    <div class="chat-header">
-      <span>MindSettler Guide</span>
-      <button id="chat-close">&times;</button>
-    </div>
-    <div id="chat-log" class="chat-log">
-      <div class="msg bot">
-        You can ask about sessions, booking, or what this page is about, and I will guide you.
-      </div>
-    </div>
-    <form id="chat-form" class="chat-form" method="post" action="{% url 'chatbot_reply' %}">
-      {% csrf_token %}
-      <input id="chat-input" name="message" type="text"
-             placeholder="Ask anything about your journey, sessions, or next steps…"
-             autocomplete="off" />
-      <button type="submit">Send</button>
-    </form>
-    <p class="chat-disclaimer">
-      Not for emergencies. For urgent help, please contact local emergency services.
-    </p>
-  </div>
-</div>
-
-<script src="{% static 'core/main.js' %}"></script>
-
-</body>
-</html>
+<section class="reveal-on-scroll">
+  <h2>Psycho‑education inside MindSettler sessions</h2>
+  <p>
+    In sessions, psycho‑education looks like small explanations, metaphors, and visuals
+    that make your patterns easier to understand.
+  </p>
+  <p>
+    You are always free to say, “Can you explain that again in a simpler way?” —
+    your understanding matters more than using perfect terms.
+  </p>
+  <p>
+    Mental well‑being is a journey, not a destination. Understanding your mind is one
+    powerful step; acting from that understanding, slowly and kindly, is the next.
+  </p>
+</section>
+{% endblock %}

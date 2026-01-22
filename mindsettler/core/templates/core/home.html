@@ -1,37 +1,50 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>MindSettler | Gentle Therapy & Psycho‑Education</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'core/styles.css' %}?v=2">
 </head>
+
 <body>
   <!-- Sticky navigation -->
-<header id="main-header" class="hero-header-wrap">
-  <div class="nav-inner">
-    <div class="logo-wrap">
-      <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
-      <span class="brand">MindSettler</span>
+  <header id="main-header" class="hero-header-wrap">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
+        <span class="brand">MindSettler</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'how_it_works' %}">Flow</a>
+        <a href="{% url 'your_journey' %}">Path</a>
+        <a href="{% url 'what_makes_us_different' %}">Why us</a>
+        <a href="{% url 'about' %}">Team</a>
+        <a href="{% url 'psycho_education' %}">Learn</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'resources' %}">Resources</a>
+        <a href="{% url 'history' %}">History</a>
+        <!-- using a simple link to logout view or signout -->
+        <a href="{% url 'account_logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'signin' %}">Resources 🔒</a>
+        <a href="{% url 'signin' %}">Login</a>
+        {% endif %}
+      </nav>
+
+      <a id="book-now-btn" class="btn primary" href="{% url 'booking' %}">
+        Book
+      </a>
     </div>
-
-    <nav class="nav-links">
-      <a href="{% url 'home' %}#hero">Home</a>
-      <a href="{% url 'how_it_works' %}">Flow</a>             <!-- How it works -->
-      <a href="{% url 'your_journey' %}">Path</a>              <!-- Your journey -->
-      <a href="{% url 'what_makes_us_different' %}">Why us</a>
-      <a href="{% url 'about' %}">Team</a>
-      <a href="{% url 'psycho_education' %}">Learn</a>
-      <a href="{% url 'signin' %}">Login</a>
-    </nav>
-
-    <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
-      Book
-    </a>
-  </div>
-</header>
+  </header>
 
 
   <!-- HERO -->
@@ -52,7 +65,7 @@
         one safe conversation at a time.
       </p>
       <div class="hero-cta reveal">
-        <a class="btn primary" href="#booking">Book your first session</a>
+        <a class="btn primary" href="{% url 'booking' %}">Book your first session</a>
         <a class="btn ghost" href="{% url 'how_it_works' %}">See how it works</a>
       </div>
       <div class="hero-cta reveal">
@@ -107,7 +120,8 @@
     <div class="cards-grid">
       <article class="card reveal">
         <h3>Overcoming patterns</h3>
-        <p>Notice, understand, and slowly change repetitive thoughts, emotions, and coping styles that are not serving you.</p>
+        <p>Notice, understand, and slowly change repetitive thoughts, emotions, and coping styles that are not serving
+          you.</p>
       </article>
       <article class="card reveal">
         <h3>Confidence &amp; self‑esteem</h3>
@@ -119,7 +133,8 @@
       </article>
       <article class="card reveal">
         <h3>Relationships</h3>
-        <p>Explore attachment, intimacy, and communication so your relationships can feel less confusing and more supportive.</p>
+        <p>Explore attachment, intimacy, and communication so your relationships can feel less confusing and more
+          supportive.</p>
       </article>
       <article class="card reveal">
         <h3>Family &amp; parenting</h3>
@@ -180,7 +195,7 @@
             </div>
           </div>
           <p class="small-note">
-            This page is for information and support, not crisis care.  
+            This page is for information and support, not crisis care.
             If you are in immediate danger, please contact local emergency services.
           </p>
         </div>
@@ -288,7 +303,8 @@
         <a href="#">Confidentiality Policy</a>
       </div>
     </div>
-    <p class="footer-bottom">This website is for education and information only and is not a substitute for medical or psychiatric care.</p>
+    <p class="footer-bottom">This website is for education and information only and is not a substitute for medical or
+      psychiatric care.</p>
   </footer>
 
   <!-- CHATBOT -->
@@ -301,7 +317,7 @@
       </div>
       <div id="chat-log" class="chat-log">
         <div class="msg bot">
-          Hi, I’m here to gently guide you through MindSettler sessions and booking.  
+          Hi, I’m here to gently guide you through MindSettler sessions and booking.
           I can’t offer crisis or medical advice, but I can help you understand how we work.
         </div>
       </div>
@@ -318,4 +334,5 @@
 
   <script src="{% static 'core/main.js' %}"></script>
 </body>
+
 </html>

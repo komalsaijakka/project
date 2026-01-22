@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block body_class %}account-body{% endblock %}
+
+{% block content %}
+<div class="page-container" style="padding-top: 140px; max-width: 600px;">
+    {% block inner_content %}
+    <!-- 
+      Note: This block is here for templates that extend account/base.html directly 
+      and know to use 'inner_content'. 
+      Standard allauth templates will just override 'content' and wipe out this wrapper div. 
+      For those standard templates, they will display full-width but at least have the nav bar.
+      For templates we control (like logout.html), we can put content inside the wrapper manually.
+    -->
+    {% endblock %}
+</div>
+{% endblock %}

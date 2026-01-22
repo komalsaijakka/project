@@ -1,37 +1,12 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sign in | MindSettler</title>
-  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
-</head>
-<body class="signin-body">
-  <!-- Header -->
-  <header id="main-header" class="hero-header-wrap">
-    <div class="nav-inner">
-      <div class="logo-wrap">
-        <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
-        <span class="brand">MindSettler</span>
-      </div>
-      <nav class="nav-links">
-        <a href="{% url 'home' %}#hero">Home</a>
-        <a href="{% url 'how_it_works' %}">Flow</a>
-        <a href="{% url 'your_journey' %}">Path</a>
-        <a href="{% url 'what_makes_us_different' %}">Why us</a>
-        <a href="{% url 'about' %}">Team</a>
-        <a href="{% url 'psycho_education' %}">Learn</a>
-        <a href="{% url 'signin' %}" class="active-link">Login</a>
-      </nav>
-      <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
-        Book
-      </a>
-    </div>
-  </header>
 
-<body class="signin-body">
+{% block title %}Sign in{% endblock %}
 
-  <!-- Main layout: image left, card right -->
+{% block body_class %}signin-body{% endblock %}
+
+{% block content %}
+<!-- Main layout: image left, card right -->
 <main class="signin-shell">
 
   <!-- Left side full-height image -->
@@ -65,36 +40,6 @@
     </div>
   </section>
 </main>
+{% endblock %}
 
-
-  <!-- keep your chatbot + main.js here -->
-
-  <!-- Chatbot -->
-  <div id="chatbot-panel">
-    <button id="chat-toggle">Need guidance?</button>
-    <div class="chat-window">
-      <div class="chat-header">
-        <span>MindSettler Guide</span>
-        <button id="chat-close">&times;</button>
-      </div>
-      <div id="chat-log" class="chat-log">
-        <div class="msg bot">
-          You can ask about sessions, login help, or how to book your first session.
-        </div>
-      </div>
-      <form id="chat-form" class="chat-form" method="post" action="{% url 'chatbot_reply' %}">
-        {% csrf_token %}
-        <input id="chat-input" name="message" type="text"
-               placeholder="Ask anything about your journey, sessions, or next steps…"
-               autocomplete="off" />
-        <button type="submit">Send</button>
-      </form>
-      <p class="chat-disclaimer">
-        Not for emergencies. For urgent help, please contact local emergency services.
-      </p>
-    </div>
-  </div>
-
-  <script src="{% static 'core/main.js' %}"></script>
-</body>
-</html>
+{% block footer %}{% endblock %}

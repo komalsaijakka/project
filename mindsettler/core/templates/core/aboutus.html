@@ -1,146 +1,90 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>About MindSettler</title>
-  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
-</head>
-<body class="about-body about-pink">
 
-<header id="main-header" class="hero-header-wrap">
-  <div class="nav-inner">
-    <div class="logo-wrap">
-      <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
-      <span class="brand">MindSettler</span>
-    </div>
+{% block title %}About MindSettler{% endblock %}
 
-    <nav class="nav-links">
-      <a href="{% url 'home' %}#hero">Home</a>
-      <a href="{% url 'how_it_works' %}">Flow</a>             <!-- How it works -->
-      <a href="{% url 'your_journey' %}">Path</a>              <!-- Your journey -->
-      <a href="{% url 'what_makes_us_different' %}">Why us</a>
-      <a href="{% url 'about' %}">Team</a>
-      <a href="{% url 'psycho_education' %}">Learn</a>
-      <a href="{% url 'signin' %}">Login</a>
-    </nav>
+{% block body_class %}about-body about-pink{% endblock %}
 
-    <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
-      Book
-    </a>
-  </div>
-</header>
-
-
-  <!-- Section 1 -->
-  <section class="about-section reveal-on-scroll">
-    <div class="text">
-      <h2>Who we are</h2>
-      <p>
-        MindSettler is an online and offline psycho‑education and mental well‑being space
-        designed to help individuals understand their emotional world without shame or panic.
-      </p>
-      <p>
-        The focus is on awareness, clarity, and self‑understanding in a safe, respectful,
-        and confidential environment — not on rushing you into labels.
-      </p>
-      <ul>
-        <li>Human‑first conversations, not clinical jargon.</li>
-        <li>Guidance grounded in psycho‑education and ethics.</li>
-        <li>Carefully held boundaries to protect your privacy.</li>
-      </ul>
-    </div>
-    <div class="image">
-      <img src="{% static 'core/img/healing.jpeg' %}" alt="Calm healing visuals">
-    </div>
-  </section>
-
-  <!-- Section 2 -->
-  <section class="about-section reverse reveal-on-scroll">
-    <div class="text">
-      <h2>What MindSettler stands for</h2>
-      <p>
-        This is a space for people who overthink therapy, feel “too sensitive”, or worry
-        that their problems are not “big enough” to deserve support.
-      </p>
-      <p>
-        Every part of the experience — booking, payment, communication, and the room itself —
-        is designed to feel gentle on your nervous system.
-      </p>
-      <ul>
-        <li>Slow, informed consent at every stage.</li>
-        <li>Transparency about what therapy can and cannot do.</li>
-        <li>Clear reminders that needing help is deeply human.</li>
-      </ul>
-    </div>
-    <div class="image">
-      <img src="{% static 'core/img/Mindsettler-2.jpg' %}" alt="MindSettler values artwork">
-    </div>
-  </section>
-
-  <!-- Section 3 -->
-  <section class="about-section reveal-on-scroll">
-    <div class="text">
-      <h2>How we hold your story</h2>
-      <p>
-        You never need to perform wellness here. You can arrive confused, numb, angry,
-        or unsure — and still be welcomed with respect.
-      </p>
-      <p>
-        Sessions combine listening, psycho‑education, and tiny, realistic next steps so that
-        change feels possible instead of overwhelming.
-      </p>
-      <ul>
-        <li>Confidential, one‑to‑one sessions, online and in‑studio.</li>
-        <li>Flexible pacing based on your capacity and life load.</li>
-        <li>Ongoing psycho‑education resources to revisit between sessions.</li>
-      </ul>
-    </div>
-    <div class="image">
-      <img src="{% static 'core/img/abstract.jpeg' %}" alt="MindSettler abstract calm art">
-    </div>
-  </section>
-
-  <!-- Closing -->
-  <section class="about-end reveal-on-scroll">
-    <h2>A room for your whole self</h2>
+{% block content %}
+<!-- Section 1 -->
+<section class="about-section reveal-on-scroll">
+  <div class="text">
+    <h2>Who we are</h2>
     <p>
-      MindSettler was created so you do not have to carry your inner world alone or
-      pretend you are okay when you are exhausted inside. If this feels like the kind
-      of room you have been searching for, your first session is a simple form away.
+      MindSettler is an online and offline psycho‑education and mental well‑being space
+      designed to help individuals understand their emotional world without shame or panic.
     </p>
-    <div style="margin-top:1.5rem;">
-      <a href="{% url 'home' %}#booking" class="cta-button">Start your journey with us</a>
-    </div>
-  </section>
-
-  <!-- Chatbot (shared) -->
-<div id="chatbot-panel">
-  <button id="chat-toggle">Need guidance?</button>
-  <div class="chat-window">
-    <div class="chat-header">
-      <span>MindSettler Guide</span>
-      <button id="chat-close">&times;</button>
-    </div>
-    <div id="chat-log" class="chat-log">
-      <div class="msg bot">
-        You can ask about sessions, booking, or what this page is about, and I will guide you.
-      </div>
-    </div>
-    <form id="chat-form" class="chat-form" method="post" action="{% url 'chatbot_reply' %}">
-      {% csrf_token %}
-      <input id="chat-input" name="message" type="text"
-             placeholder="Ask anything about your journey, sessions, or next steps…"
-             autocomplete="off" />
-      <button type="submit">Send</button>
-    </form>
-    <p class="chat-disclaimer">
-      Not for emergencies. For urgent help, please contact local emergency services.
+    <p>
+      The focus is on awareness, clarity, and self‑understanding in a safe, respectful,
+      and confidential environment — not on rushing you into labels.
     </p>
+    <ul>
+      <li>Human‑first conversations, not clinical jargon.</li>
+      <li>Guidance grounded in psycho‑education and ethics.</li>
+      <li>Carefully held boundaries to protect your privacy.</li>
+    </ul>
   </div>
-</div>
+  <div class="image">
+    <img src="{% static 'core/img/healing.jpeg' %}" alt="Calm healing visuals">
+  </div>
+</section>
 
-<script src="{% static 'core/main.js' %}"></script>
+<!-- Section 2 -->
+<section class="about-section reverse reveal-on-scroll">
+  <div class="text">
+    <h2>What MindSettler stands for</h2>
+    <p>
+      This is a space for people who overthink therapy, feel “too sensitive”, or worry
+      that their problems are not “big enough” to deserve support.
+    </p>
+    <p>
+      Every part of the experience — booking, payment, communication, and the room itself —
+      is designed to feel gentle on your nervous system.
+    </p>
+    <ul>
+      <li>Slow, informed consent at every stage.</li>
+      <li>Transparency about what therapy can and cannot do.</li>
+      <li>Clear reminders that needing help is deeply human.</li>
+    </ul>
+  </div>
+  <div class="image">
+    <img src="{% static 'core/img/Mindsettler-2.jpg' %}" alt="MindSettler values artwork">
+  </div>
+</section>
 
-</body>
-</html>
+<!-- Section 3 -->
+<section class="about-section reveal-on-scroll">
+  <div class="text">
+    <h2>How we hold your story</h2>
+    <p>
+      You never need to perform wellness here. You can arrive confused, numb, angry,
+      or unsure — and still be welcomed with respect.
+    </p>
+    <p>
+      Sessions combine listening, psycho‑education, and tiny, realistic next steps so that
+      change feels possible instead of overwhelming.
+    </p>
+    <ul>
+      <li>Confidential, one‑to‑one sessions, online and in‑studio.</li>
+      <li>Flexible pacing based on your capacity and life load.</li>
+      <li>Ongoing psycho‑education resources to revisit between sessions.</li>
+    </ul>
+  </div>
+  <div class="image">
+    <img src="{% static 'core/img/abstract.jpeg' %}" alt="MindSettler abstract calm art">
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="about-end reveal-on-scroll">
+  <h2>A room for your whole self</h2>
+  <p>
+    MindSettler was created so you do not have to carry your inner world alone or
+    pretend you are okay when you are exhausted inside. If this feels like the kind
+    of room you have been searching for, your first session is a simple form away.
+  </p>
+  <div style="margin-top:1.5rem;">
+    <a href="{% url 'home' %}#booking" class="cta-button">Start your journey with us</a>
+  </div>
+</section>
+{% endblock %}

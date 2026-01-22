@@ -1,202 +1,153 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Your Journey | MindSettler</title>
-  <link rel="stylesheet" href="{% static 'core/styles.css' %}">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-</head>
-<body class="journey-body">
 
-  <!-- Header -->
-<header id="main-header" class="hero-header-wrap">
-  <div class="nav-inner">
-    <div class="logo-wrap">
-      <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
-      <span class="brand">MindSettler</span>
+{% block title %}Your Journey{% endblock %}
+
+{% block extra_head %}
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+  rel="stylesheet">
+{% endblock %}
+
+{% block body_class %}journey-body{% endblock %}
+
+{% block content %}
+<!-- Journey section -->
+<section id="journey-section">
+  <div class="journey-overlay"></div>
+
+  <div class="journey-container">
+    <p class="eyebrow">Your MindSettler Path</p>
+    <h1 class="journey-title">From feeling unsettled to feeling gently held.</h1>
+    <p class="journey-intro">
+      Mental well‑being is a gentle journey, not a race. At MindSettler, your path starts
+      with awareness and moves towards lasting emotional safety — step by step, at a pace
+      that your nervous system can actually hold.
+    </p>
+
+    <!-- Timeline -->
+    <div class="timeline">
+
+      <!-- Step 1 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-icon">1</div>
+          <h3>Noticing: “Something feels off.”</h3>
+          <p>
+            You start to notice that daily life, relationships, or work are quietly draining
+            your peace. You may not have the right words yet — only a sense that you do not
+            feel like yourself. This is where your journey really begins.
+          </p>
+          <p>
+            In this stage, psycho‑education resources and our social posts help you realise
+            that it is normal to seek support and that nothing about you is “too much” or
+            “too late” to work with.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-icon">2</div>
+          <h3>Reaching out and booking your first session</h3>
+          <p>
+            Deciding to reach out is brave. You choose a convenient online or studio slot
+            using the simple booking form — no complicated accounts or instant payments.
+          </p>
+          <p>
+            You share a few lines about what is going on. Your slot is marked as
+            <strong>Pending Confirmation</strong> while we review your request and send
+            clear payment details, including UPI and cash options.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-icon">3</div>
+          <h3>Confirmation, preparation, and feeling ready enough</h3>
+          <p>
+            Once payment is received, your session is manually confirmed and you get the
+            option to add it directly to your Google Calendar, with all details in one place.
+          </p>
+          <p>
+            Before the session, you receive gentle guidance on how to prepare:
+            setting up a private space, headphones if needed, and what to do if you feel
+            nervous or unsure just before the call.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-icon">4</div>
+          <h3>Your 60‑minute introductory session</h3>
+          <p>
+            This first conversation is a calm, non‑judgmental space to share what brought
+            you here. You set the pace; your guide checks in on comfort, boundaries, and
+            anything that feels off or overwhelming.
+          </p>
+          <p>
+            Together, you explore what you are carrying, name patterns, and identify one
+            or two practical next steps. Many people feel lighter simply because there is
+            finally a structured place to put everything they have been holding alone.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-icon">5</div>
+          <h3>Ongoing sessions and gentle progress</h3>
+          <p>
+            If continuing feels right, you move into regular 60‑minute sessions. Each one
+            weaves together emotional support, psycho‑education, and small, realistic
+            practices to try between sessions.
+          </p>
+          <p>
+            You decide the pace — weekly, fortnightly, or as your capacity allows.
+            The focus is not on fixing you, but on building awareness, skills, and
+            inner steadiness over time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-icon">6</div>
+          <h3>Integration, check‑ins, and future support</h3>
+          <p>
+            As you begin to feel more settled, sessions may space out into periodic
+            check‑ins. You use this time to integrate insights, review boundaries, and
+            strengthen habits that protect your peace.
+          </p>
+          <p>
+            You are always welcome to return for focused sessions when life changes,
+            grief surfaces, or new chapters begin. MindSettler remains a steady space
+            you can come back to, not a one‑time fix.
+          </p>
+        </div>
+      </div>
+
     </div>
 
-    <nav class="nav-links">
-      <a href="{% url 'home' %}#hero">Home</a>
-      <a href="{% url 'how_it_works' %}">Flow</a>             <!-- How it works -->
-      <a href="{% url 'your_journey' %}">Path</a>              <!-- Your journey -->
-      <a href="{% url 'what_makes_us_different' %}">Why us</a>
-      <a href="{% url 'about' %}">Team</a>
-      <a href="{% url 'psycho_education' %}">Learn</a>
-      <a href="{% url 'signin' %}">Login</a>
-    </nav>
-
-    <a id="book-now-btn" class="btn primary" href="{% url 'home' %}#booking">
-      Book
-    </a>
-  </div>
-</header>
-
-
-  <!-- Journey section -->
-  <section id="journey-section">
-    <div class="journey-overlay"></div>
-
-    <div class="journey-container">
-      <p class="eyebrow">Your MindSettler Path</p>
-      <h1 class="journey-title">From feeling unsettled to feeling gently held.</h1>
-      <p class="journey-intro">
-        Mental well‑being is a gentle journey, not a race. At MindSettler, your path starts
-        with awareness and moves towards lasting emotional safety — step by step, at a pace
-        that your nervous system can actually hold.
+    <!-- CTA -->
+    <div class="journey-cta">
+      <h2>Where are you on this journey right now?</h2>
+      <p>
+        Whether you are just noticing that something feels heavy, or you are ready to book
+        your first session, your next step can be small and still meaningful.
       </p>
-
-      <!-- Timeline -->
-      <div class="timeline">
-
-        <!-- Step 1 -->
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-icon">1</div>
-            <h3>Noticing: “Something feels off.”</h3>
-            <p>
-              You start to notice that daily life, relationships, or work are quietly draining
-              your peace. You may not have the right words yet — only a sense that you do not
-              feel like yourself. This is where your journey really begins.
-            </p>
-            <p>
-              In this stage, psycho‑education resources and our social posts help you realise
-              that it is normal to seek support and that nothing about you is “too much” or
-              “too late” to work with.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 2 -->
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-icon">2</div>
-            <h3>Reaching out and booking your first session</h3>
-            <p>
-              Deciding to reach out is brave. You choose a convenient online or studio slot
-              using the simple booking form — no complicated accounts or instant payments.
-            </p>
-            <p>
-              You share a few lines about what is going on. Your slot is marked as
-              <strong>Pending Confirmation</strong> while we review your request and send
-              clear payment details, including UPI and cash options.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-icon">3</div>
-            <h3>Confirmation, preparation, and feeling ready enough</h3>
-            <p>
-              Once payment is received, your session is manually confirmed and you get the
-              option to add it directly to your Google Calendar, with all details in one place.
-            </p>
-            <p>
-              Before the session, you receive gentle guidance on how to prepare:
-              setting up a private space, headphones if needed, and what to do if you feel
-              nervous or unsure just before the call.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-icon">4</div>
-            <h3>Your 60‑minute introductory session</h3>
-            <p>
-              This first conversation is a calm, non‑judgmental space to share what brought
-              you here. You set the pace; your guide checks in on comfort, boundaries, and
-              anything that feels off or overwhelming.
-            </p>
-            <p>
-              Together, you explore what you are carrying, name patterns, and identify one
-              or two practical next steps. Many people feel lighter simply because there is
-              finally a structured place to put everything they have been holding alone.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 5 -->
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-icon">5</div>
-            <h3>Ongoing sessions and gentle progress</h3>
-            <p>
-              If continuing feels right, you move into regular 60‑minute sessions. Each one
-              weaves together emotional support, psycho‑education, and small, realistic
-              practices to try between sessions.
-            </p>
-            <p>
-              You decide the pace — weekly, fortnightly, or as your capacity allows.
-              The focus is not on fixing you, but on building awareness, skills, and
-              inner steadiness over time.
-            </p>
-          </div>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="timeline-item">
-          <div class="timeline-card">
-            <div class="timeline-icon">6</div>
-            <h3>Integration, check‑ins, and future support</h3>
-            <p>
-              As you begin to feel more settled, sessions may space out into periodic
-              check‑ins. You use this time to integrate insights, review boundaries, and
-              strengthen habits that protect your peace.
-            </p>
-            <p>
-              You are always welcome to return for focused sessions when life changes,
-              grief surfaces, or new chapters begin. MindSettler remains a steady space
-              you can come back to, not a one‑time fix.
-            </p>
-          </div>
-        </div>
-
+      <div class="journey-cta-actions">
+        <a href="{% url 'home' %}#booking" class="cta-button">Start with your first session</a>
+        <a href="{% url 'how_it_works' %}" class="cta-secondary-link">See how the process works</a>
       </div>
-
-      <!-- CTA -->
-      <div class="journey-cta">
-        <h2>Where are you on this journey right now?</h2>
-        <p>
-          Whether you are just noticing that something feels heavy, or you are ready to book
-          your first session, your next step can be small and still meaningful.
-        </p>
-        <div class="journey-cta-actions">
-          <a href="{% url 'home' %}#booking" class="cta-button">Start with your first session</a>
-          <a href="{% url 'how_it_works' %}" class="cta-secondary-link">See how the process works</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Shared chatbot -->
-  <div id="chatbot-panel">
-    <button id="chat-toggle">Need guidance?</button>
-    <div class="chat-window">
-      <div class="chat-header">
-        <span>MindSettler Guide</span>
-        <button id="chat-close">&times;</button>
-      </div>
-      <div id="chat-log" class="chat-log">
-        <div class="msg bot">
-          You can ask where to start, how many sessions people usually take, or anything about your journey with MindSettler.
-        </div>
-      </div>
-      <form id="chat-form" class="chat-form">
-        {% csrf_token %}
-        <input id="chat-input" type="text" placeholder="Ask about your journey, sessions, or booking…" autocomplete="off" />
-        <button type="submit">Send</button>
-      </form>
-      <p class="chat-disclaimer">
-        Not for emergencies. For urgent help, please contact local emergency services.
-      </p>
     </div>
   </div>
-
-  <script src="{% static 'core/main.js' %}"></script>
-</body>
-</html>
+</section>
+{% endblock %}

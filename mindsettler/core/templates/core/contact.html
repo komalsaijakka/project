@@ -1,0 +1,61 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1 class="page-title">Get in Touch</h1>
+
+    <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <p style="margin-bottom: 30px; line-height: 1.6;">
+                We are here to answer any questions you may have about our sessions, approach, or booking process. Reach
+                out to us and we'll respond as soon as we can.
+            </p>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 10px;">Phone & WhatsApp</h3>
+                <p style="font-size: 1.1rem; color: #333;">+91 99746 31313</p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 10px;">Instagram</h3>
+                <p><a href="https://instagram.com/mindsettlerbypb" target="_blank"
+                        style="color: #d4a373; text-decoration: none; font-size: 1.1rem;">@mindsettlerbypb</a></p>
+            </div>
+
+            <div style="margin-bottom: 30px;">
+                <h3 style="margin-bottom: 10px;">Location</h3>
+                <p style="line-height: 1.6;">
+                    Online via Zoom / Google Meet<br>
+                    Offline Studio: [Address Placeholder]
+                </p>
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 300px;">
+            <div
+                style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <h3 style="margin-bottom: 20px;">Send a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px;">Name</label>
+                        <input type="text" class="form-control" placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px;">Email</label>
+                        <input type="email" class="form-control" placeholder="Your Email">
+                    </div>
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 8px;">Message</label>
+                        <textarea class="form-control" rows="5" placeholder="How can we help?"></textarea>
+                    </div>
+                    <button type="button" class="btn-submit"
+                        onclick="alert('Thank you! This is a demo form. Please contact via WhatsApp for now.')">Send
+                        Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

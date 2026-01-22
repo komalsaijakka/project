@@ -1,0 +1,66 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Resources{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1 class="page-title">Resources & Self-Help</h1>
+    <p style="max-width: 800px; line-height: 1.6; margin-bottom: 40px;">
+        Explore a curated collection of blogs, articles, and videos designed to support your mental well-being.
+    </p>
+
+    <div class="resources-grid"
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+        <!-- Placeholder Resource 1 -->
+        <article
+            style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: transform 0.3s;">
+            <div
+                style="height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">
+                Image Placeholder
+            </div>
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; font-size: 1.2rem;">Understanding Anxiety</h3>
+                <p style="color: #666; font-size: 0.9rem;">A gentle guide to understanding the physical and emotional
+                    signs of anxiety.</p>
+                <a href="#"
+                    style="color: #d4a373; text-decoration: none; font-weight: 600; margin-top: 10px; display: inline-block;">Read
+                    Article &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Placeholder Resource 2 -->
+        <article
+            style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div
+                style="height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">
+                Image Placeholder
+            </div>
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; font-size: 1.2rem;">The Power of Routine</h3>
+                <p style="color: #666; font-size: 0.9rem;">How small daily habits can create a sense of safety and
+                    predictability.</p>
+                <a href="#"
+                    style="color: #d4a373; text-decoration: none; font-weight: 600; margin-top: 10px; display: inline-block;">Read
+                    Article &rarr;</a>
+            </div>
+        </article>
+
+        <!-- Placeholder Resource 3 -->
+        <article
+            style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+            <div
+                style="height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #999;">
+                Image Placeholder
+            </div>
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; font-size: 1.2rem;">Guided Breathing</h3>
+                <p style="color: #666; font-size: 0.9rem;">A 5-minute video to help you ground yourself when things feel
+                    overwhelming.</p>
+                <a href="#"
+                    style="color: #d4a373; text-decoration: none; font-weight: 600; margin-top: 10px; display: inline-block;">Watch
+                    Video &rarr;</a>
+            </div>
+        </article>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "core/base.html" %}
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Out" %}{% endblock %}
+
+{% block content %}
+<div class="page-container" style="padding-top: 150px; display: flex; justify-content: center;">
+    <div class="signin-card"
+        style="max-width: 500px; width: 100%; text-align: center; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+
+        <h1 style="font-family: 'Playfair Display', serif; margin-bottom: 20px; color: #333;">{% trans "See you soon" %}
+        </h1>
+
+        <p style="margin-bottom: 30px; font-size: 1.1rem; color: #666;">
+            {% trans "Are you sure you want to sign out?" %}
+        </p>
+
+        <form method="post" action="{% url 'account_logout' %}">
+            {% csrf_token %}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+
+            <div style="display: flex; gap: 15px; justify-content: center;">
+                <button type="submit" class="btn primary"
+                    style="border: none; cursor: pointer; padding: 12px 30px; border-radius: 50px; font-size: 1rem;">
+                    {% trans "Sign Out" %}
+                </button>
+                <a href="javascript:history.back()" class="btn ghost"
+                    style="text-decoration: none; padding: 12px 30px; border: 1px solid #ddd; border-radius: 50px; color: #666; font-size: 1rem;">
+                    {% trans "Cancel" %}
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Book a Session{% endblock %}
+
+{% block content %}
+<div class="page-container">
+    <h1 class="page-title">Book Your Session</h1>
+
+    <div style="display: flex; gap: 40px; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+            <p style="margin-bottom: 20px; line-height: 1.6;">
+                Choose a time that works for you. Our sessions are 60 minutes long and designed to be a safe space for
+                you to explore your thoughts and feelings.
+            </p>
+
+            <div style="background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label for="id_session_type"
+                            style="display: block; margin-bottom: 8px; font-weight: 500;">Session Type</label>
+                        <select name="session_type" class="form-control"
+                            style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #ddd;">
+                            <option value="online">Online Assessment</option>
+                            <option value="offline">In-Person Consultation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label style="display: block; margin-bottom: 12px; font-weight: 500;">Select a Time Slot</label>
+
+                        <div class="slots-container" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                            {% for day_str, slots in slots_data.items %}
+                            <h4 style="margin: 20px 0 10px; font-size: 1rem; color: #d4a373;">{{ day_str }}</h4>
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px;">
+                                {% for slot in slots %}
+                                <button type="submit" name="slot_time" value="{{ slot.isoformat }}" class="slot-btn"
+                                    style="padding: 10px; border: 1px solid #ddd; background: white; border-radius: 6px; cursor: pointer; transition: all 0.2s;">
+                                    {{ slot|date:"g:i A" }}
+                                </button>
+                                {% endfor %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Hidden input logic handled by buttons directly roughly, but clean -->
+
+                    <style>
+                        .slot-btn:hover {
+                            background-color: #f0f0f0 !important;
+                            border-color: #bbb !important;
+                        }
+                    </style>
+
+                    <!-- Google Calendar Note -->
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg"
+                            width="20" style="vertical-align: middle; margin-right: 5px;">
+                        This will be synced to our Google Calendar to ensure availability.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <div style="flex: 1; min-width: 300px;">
+            <div style="background: #fafafa; padding: 30px; border-radius: 12px;">
+                <h3 style="margin-bottom: 15px; font-family: 'Playfair Display', serif;">Session Details</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">⏱</span> 60 Minutes
+                    </li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">📍</span> Online or In-Person
+                    </li>
+                    <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                        <span style="margin-right: 10px;">🔒</span> Confidential
+                    </li>
+                </ul>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                <p style="font-size: 0.9rem; color: #555;">
+                    "The first step towards healing is often the hardest, but also the most courageous."
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

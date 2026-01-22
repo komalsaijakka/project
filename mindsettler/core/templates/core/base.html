@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}MindSettler{% endblock %} | Gentle Therapy & Psycho‑Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'core/styles.css' %}?v=2">
+  <style>
+    /* Additional styles for inner pages if needed */
+    .page-container {
+      padding-top: 100px;
+      /* Space for fixed header */
+      min-height: 80vh;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .page-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-submit {
+      background-color: #d4a373;
+      /* Example color from theme */
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    .btn-submit:hover {
+      background-color: #c38e5d;
+    }
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+  <!-- Sticky navigation -->
+  <header id="main-header" class="hero-header-wrap">
+    <div class="nav-inner">
+      <div class="logo-wrap">
+        <a href="{% url 'home' %}" style="text-decoration:none; display:flex; align-items:center;">
+          <img src="{% static 'core/img/logo.png' %}" alt="MindSettler logo" class="logo">
+          <span class="brand">MindSettler</span>
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'how_it_works' %}">Flow</a>
+        <a href="{% url 'your_journey' %}">Path</a>
+        <a href="{% url 'what_makes_us_different' %}">Why us</a>
+        <a href="{% url 'about' %}">Team</a>
+        <a href="{% url 'psycho_education' %}">Learn</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        {% if user.is_authenticated %}
+        <a href="{% url 'resources' %}">Resources</a>
+        <a href="{% url 'history' %}">History</a>
+        <a href="{% url 'account_logout' %}">Logout</a>
+        {% else %}
+        <a href="{% url 'signin' %}">Resources 🔒</a>
+        <a href="{% url 'signin' %}">Login</a>
+        {% endif %}
+      </nav>
+
+      <a id="book-now-btn" class="btn primary" href="{% url 'booking' %}">
+        Book Session
+      </a>
+    </div>
+  </header>
+
+  <main>
+    {% if messages %}
+    <div class="page-container" style="padding-bottom: 0;">
+      {% for message in messages %}
+      <div class="alert {{ message.tags }}"
+        style="padding: 1rem; background: #f8f9fa; border-left: 4px solid #d4a373; margin-bottom: 1rem;">
+        {{ message }}
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  {% block footer %}
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">MindSettler</p>
+        <p>Structured, human therapy and psycho‑education for your everyday life.</p>
+      </div>
+      <div>
+        <p class="footer-heading">Contact</p>
+        <p>Phone / WhatsApp: +91 99746 31313</p>
+        <p>Instagram: @mindsettlerbypb</p>
+        <p><a href="{% url 'contact' %}" style="color: inherit;">Contact Page</a></p>
+      </div>
+      <div>
+        <p class="footer-heading">Legal</p>
+        <a href="{% url 'privacy_policy' %}">Privacy Policy</a><br>
+        <a href="{% url 'refund_policy' %}">Non‑Refund Policy</a><br>
+        <a href="{% url 'confidentiality_policy' %}">Confidentiality Policy</a>
+      </div>
+    </div>
+    <p class="footer-bottom">This website is for education and information only and is not a substitute for medical or
+      psychiatric care.</p>
+  </footer>
+  {% endblock %}
+
+  <script src="{% static 'core/main.js' %}"></script>
+</body>
+
+</html>
